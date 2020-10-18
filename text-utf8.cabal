@@ -139,12 +139,12 @@ library
     Data.Text.Show
 
   build-depends:
-    array      >= 0.5.0.0 && < 0.6,
-    base       >= 4.7.0.0 && < 4.12,
-    binary     >= 0.7.1.0 && < 0.9,
-    deepseq    >= 1.1.0.0 && < 1.5,
-    ghc-prim   >= 0.3.1.0 && < 0.6,
-    bytestring >= 0.10.4 && < 0.11
+    array      >= 0.5.0.0,
+    base       >= 4.7.0.0,
+    binary     >= 0.7.1.0,
+    deepseq    >= 1.1.0.0,
+    ghc-prim   >= 0.3.1.0,
+    bytestring >= 0.10.4
 
   cpp-options: -DHAVE_DEEPSEQ
   ghc-options: -Wall -fwarn-tabs -funbox-strict-fields -O2
@@ -155,10 +155,10 @@ library
 
   if flag(integer-simple)
     cpp-options: -DINTEGER_SIMPLE
-    build-depends: integer-simple >= 0.1 && < 0.5
+    build-depends: integer-simple >= 0.1
   else
     cpp-options: -DINTEGER_GMP
-    build-depends: integer-gmp >= 0.5.1 && < 1.1
+    build-depends: integer-gmp >= 0.5.1
 
 test-suite tests
   type:           exitcode-stdio-1.0
@@ -256,7 +256,7 @@ test-suite tests
 
   if flag(integer-simple)
     cpp-options: -DINTEGER_SIMPLE
-    build-depends: integer-simple >= 0.1 && < 0.5
+    build-depends: integer-simple >= 0.1
   else
     cpp-options: -DINTEGER_GMP
     build-depends: integer-gmp >= 0.2

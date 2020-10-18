@@ -43,7 +43,7 @@ instance Monad (IParser t) where
                            Left err     -> Left err
                            Right (a,t') -> runP (k a) t'
     {-# INLINE (>>=) #-}
-    fail msg = P $ \_ -> Left msg
+    -- fail msg = P $ \_ -> Left msg
 
 data T = T !Integer !Int
 
